@@ -1,0 +1,1745 @@
+{
+  "SakilaProject\\.mvn\\wrapper\\MavenWrapperDownloader.java": {
+    "summary": "This is a Java method that downloads a file from a URL.",
+    "methods": [
+      {
+        "name": "downloadMavenWrapper",
+        "signature": "void",
+        "description": "Downloads the Maven wrapper JAR file to the current directory."
+      },
+      {
+        "name": "downloadMavenWrapperJar",
+        "signature": "void downloadMavenWrapperJar(String baseDirectory)",
+        "description": "This method downloads the maven-wrapper.jar file from the specified URL and saves it to the specified base directory."
+      },
+      {
+        "name": "readMavenWrapperProperties",
+        "signature": "File readMavenWrapperProperties(String baseDirectory, String MAVEN_WRAPPER_PROPERTIES_PATH)",
+        "description": "Reads the maven-wrapper.properties file and checks if it contains a custom wrapperUrl parameter. If it does, it sets the url variable to the value of the wrapperUrl parameter."
+      },
+      {
+        "name": "downloadFileFromURL",
+        "signature": "void downloadFileFromURL(String url, File outputFile)",
+        "description": "Downloads a file from a URL and saves it to a specified directory."
+      },
+      {
+        "name": "downloadFileFromURL",
+        "signature": "private static void downloadFileFromURL(String urlString, File destination) throws Exception",
+        "description": "This method downloads a file from a URL and saves it to the specified destination file. If the URL requires authentication, it uses the MVNW_USERNAME and MVNW_PASSWORD environment variables to authenticate."
+      }
+    ],
+    "complexity_notes": "The code is relatively simple and straightforward. It uses the Java.net package to download the JAR file from a specified URL, and the Java.nio.channels package to write the file to disk. The class also includes some constants and a static method to retrieve the default download URL if no 'downloadUrl' property is provided in the maven-wrapper.properties file. The code is relatively simple and straightforward. The only method defined is 'downloadMavenWrapperJar', which takes a single parameter of type 'String' representing the base directory where the maven-wrapper.jar file will be saved to. The method uses the 'File' class to create a new file object and save the downloaded file to the specified directory. The code also defines a constant for the default path where the maven-wrapper.jar file will be saved to, which can be overridden by setting the 'wrapperUrl' property. The code is relatively simple and straightforward. It reads a file, loads properties from it, and sets a variable. The only potential complexity is the possibility of an IOException if the file cannot be read or the properties cannot be loaded. The code is relatively simple and straightforward. The only potential complexity is the possibility of errors during the download process, which are handled by the catch block. The method is relatively simple and straightforward. It uses standard Java libraries to open a stream from the URL and write the data to a file. The use of environment variables for authentication adds some complexity, but it is still a straightforward implementation. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\SakilaProjectApplication.java": {
+    "summary": "This is a Java file that contains a Spring Boot application class.",
+    "methods": [
+      {
+        "name": "main",
+        "signature": "public static void main(String[] args)",
+        "description": "The main method that starts the Spring Boot application."
+      }
+    ],
+    "complexity_notes": "The code is simple and easy to understand. It only contains a main method that starts the Spring Boot application. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\ActorController.java": {
+    "summary": "This file is a Java controller for handling HTTP requests related to actor details.",
+    "methods": [
+      {
+        "name": "getActorList",
+        "signature": "List<Actor> getActorList(ModelMap modelMap)",
+        "description": "Returns a list of actors from the database."
+      },
+      {
+        "name": "getActorById",
+        "signature": "Actor getActorById(ModelMap modelMap, @RequestParam int id)",
+        "description": "Returns an actor by ID from the database."
+      },
+      {
+        "name": "getActors",
+        "signature": "public String getActors(ModelMap modelMap, String firstNameFilter, String lastNameFilter)",
+        "description": "Returns a list of actors based on the provided filters. If no filters are provided, it returns all actors."
+      },
+      {
+        "name": "getActorFilmDetails",
+        "signature": "public String getActorFilmDetails(ModelMap modelMap, @RequestParam(value = \"id\") Integer id)",
+        "description": "Returns the details of an actor and their films."
+      },
+      {
+        "name": "findActorById",
+        "signature": "public Actor findActorById(Integer id)",
+        "description": "Returns an actor object by their ID."
+      },
+      {
+        "name": "getActorFullNameFromID",
+        "signature": "public String getActorFullNameFromID(Integer id)",
+        "description": "Returns the full name of an actor by their ID."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are simple and straightforward, making it easy to maintain and extend. The code is relatively simple and easy to understand. The getActors method uses a series of if-else statements to determine which method of the ActorService to call based on the provided filters. The resulting list of actors is then added to the ModelMap and returned as a view. The code is well-structured and easy to understand. The methods are well-documented and follow a consistent naming convention. The controller handles multiple requests and returns multiple responses, which may increase the complexity of the code. However, the code is still manageable and maintainable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\CategoryController.java": {
+    "summary": "This file is a Java class that provides a method to retrieve a category by its ID.",
+    "methods": [
+      {
+        "name": "getCategories",
+        "signature": "public String getCategories(ModelMap modelMap)",
+        "description": "Returns a list of all categories."
+      },
+      {
+        "name": "getCategoryDetails",
+        "signature": "public String getCategoryDetails(ModelMap modelMap, @RequestParam(value = \"id\") Integer id)",
+        "description": "Returns details of a specific category, including its films."
+      },
+      {
+        "name": "getCategoryById",
+        "signature": "public Category getCategoryById(Integer id)",
+        "description": "This method retrieves a category by its ID using the categoryService."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to read. The methods are well-documented and follow best practices for Spring annotations. The overall complexity of the code is low. The code is simple and straightforward. The method is well-defined and easy to understand. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\CustomerController.java": {
+    "summary": "This file is a Java controller for managing customer details and rental history.",
+    "methods": [
+      {
+        "name": "listCustomers",
+        "signature": "List<Customer> listCustomers(Model model)",
+        "description": "Returns a list of all customers in the system."
+      },
+      {
+        "name": "createCustomer",
+        "signature": "Customer createCustomer(@RequestParam String firstName, @RequestParam String lastName, Model model)",
+        "description": "Creates a new customer with the given first and last names."
+      },
+      {
+        "name": "updateCustomer",
+        "signature": "Customer updateCustomer(@PathVariable Long id, @RequestParam String firstName, @RequestParam String lastName, Model model)",
+        "description": "Updates an existing customer with the given ID, first name, and last name."
+      },
+      {
+        "name": "deleteCustomer",
+        "signature": "void deleteCustomer(@PathVariable Long id)",
+        "description": "Deletes a customer with the given ID."
+      },
+      {
+        "name": "currentUser",
+        "signature": "public String currentUser(ModelMap modelMap, HttpServletRequest request)",
+        "description": "Returns the current user's information and their orders."
+      },
+      {
+        "name": "getCustomers",
+        "signature": "@GetMapping(\"/owner/customers\") public String getCustomers(ModelMap modelMap, @RequestParam(value = \"firstName\", defaultValue = \"ALL CUSTOMERS\") String firstNameFilter, @RequestParam(value = \"lastName\", defaultValue = \"ALL CUSTOMERS\") String lastNameFilter)",
+        "description": "Retrieves a list of customers based on first name and last name filters."
+      },
+      {
+        "name": "showUsersRentalHistory",
+        "signature": "public String showUsersRentalHistory(ModelMap modelMap, @PathVariable(name = \"id\") int id)",
+        "description": "This method retrieves the rental history for a given customer and displays it in the customer details page."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to read, with clear method signatures and descriptions. However, the use of multiple services and dependencies may increase the overall complexity of the application. The code is relatively simple and straightforward. The only complexity is the nested calls to the other services to retrieve the necessary information. The method has a moderate level of complexity due to the number of conditional statements and method calls. The code is well-structured and easy to understand. The methods are defined with clear names and signatures, and the logic is easy to follow. The use of the ModelMap object simplifies the passing of data between the controller and the view. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\FilmController.java": {
+    "summary": "This file is a Java controller for managing films in a web application.",
+    "methods": [
+      {
+        "name": "listFilms",
+        "signature": "public ModelAndView listFilms(Model model, Principal principal)",
+        "description": "Returns a list of films available for rental, sorted by release date."
+      },
+      {
+        "name": "getFilms",
+        "signature": "public String getFilms(ModelMap modelMap, @RequestParam(value = \"title\", defaultValue = \"ALL FILMS\") String filter)",
+        "description": "Retrieves a list of films based on the given filter. If the filter is set to 'ALL FILMS', it retrieves all films."
+      },
+      {
+        "name": "getFilmDetails",
+        "signature": "@GetMapping(\"/films/details\") public String getFilmDetails(ModelMap modelMap, @RequestParam(value = \"id\") Integer id)",
+        "description": "Returns the details of a film by its ID. It also checks if the film is available for rent. The method takes a ModelMap and an Integer as input parameters and returns a String."
+      },
+      {
+        "name": "rentFilm",
+        "signature": "@GetMapping(\"/rent/{filmid}\") public String rentFilm(ModelMap modelMap, Principal principal, @PathVariable(\"filmid\") int filmid)",
+        "description": "Rents a film by its ID. The method takes a ModelMap, a Principal, and an Integer as input parameters and returns a String. It first checks if the film is available for rent by iterating through the inventory list. If the film is available, it creates a new rental record and updates the inventory list. It then redirects the user to the films page."
+      },
+      {
+        "name": "getFilmDetails",
+        "signature": "@GetMapping(\"/owner/manage-films\") public String getFilmDetails(ModelMap modelMap, @RequestParam(value = \"title\", defaultValue = \"ALL FILMS\") String filter)",
+        "description": "Returns the details of a film or all films based on the filter parameter."
+      },
+      {
+        "name": "showEditProductPage",
+        "signature": "@RequestMapping(\"/edit/{id}\") public ModelAndView showEditProductPage(@PathVariable(name = \"id\") int id)",
+        "description": "Returns a view for editing a film with the specified ID."
+      },
+      {
+        "name": "deleteProduct",
+        "signature": "@RequestMapping(\"/delete/{id}\") public String deleteProduct(@PathVariable(name = \"id\") int id)",
+        "description": "Deletes a film with the specified ID."
+      },
+      {
+        "name": "findFilmByID",
+        "signature": "public Film findFilmByID(Integer id)",
+        "description": "Returns a film with the specified ID."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are defined with clear names and signatures, and the purpose of each method is well-documented. The code is well-structured and easy to understand. The use of annotations and dependency injection makes it easy to maintain and extend. The code is relatively simple and easy to understand. The methods are well-named and documented, and the structure of the code is straightforward. However, the use of multiple dependencies (FilmService, CustomerService, InventoryService, and RentalService) may increase the complexity of the codebase. The code is well-structured and easy to understand. The methods are well-documented and have clear signatures. The use of HashMap to store film counts is a good design choice. However, the use of ModelMap to pass data between controllers and views may be considered less efficient than using plain Java objects. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\MainController.java": {
+    "summary": "This file is a Java controller for a web application. It defines three methods that handle HTTP requests for the home page, login page, and account page.",
+    "methods": [
+      {
+        "name": "home",
+        "signature": "public String home()",
+        "description": "Returns the name of the home page."
+      },
+      {
+        "name": "login",
+        "signature": "public String login()",
+        "description": "Returns the name of the login page."
+      },
+      {
+        "name": "account",
+        "signature": "public String account()",
+        "description": "Returns the name of the account page."
+      }
+    ],
+    "complexity_notes": "The structure and complexity of this file is straightforward. It defines a controller with three methods that handle HTTP requests for different pages. The methods are simple and return a string value. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\controller\\StaffController.java": {
+    "summary": "This is a Java class that implements the StaffController interface and handles HTTP GET requests for the /owner endpoint. It uses dependency injection to inject instances of StaffService, CustomerService, and InventoryService.",
+    "methods": [
+      {
+        "name": "getStaffList",
+        "signature": "void getStaffList(HttpServletRequest request, ModelMap modelMap)",
+        "description": "Returns a list of all staff members."
+      },
+      {
+        "name": "getStaffDetails",
+        "signature": "void getStaffDetails(HttpServletRequest request, ModelMap modelMap, int staffId)",
+        "description": "Returns details of a specific staff member."
+      },
+      {
+        "name": "addStaff",
+        "signature": "void addStaff(HttpServletRequest request, ModelMap modelMap, Staff staff)",
+        "description": "Adds a new staff member."
+      },
+      {
+        "name": "updateStaff",
+        "signature": "void updateStaff(HttpServletRequest request, ModelMap modelMap, int staffId, Staff staff)",
+        "description": "Updates an existing staff member."
+      },
+      {
+        "name": "deleteStaff",
+        "signature": "void deleteStaff(HttpServletRequest request, ModelMap modelMap, int staffId)",
+        "description": "Deletes a staff member."
+      },
+      {
+        "name": "currentUser",
+        "signature": "public String currentUser(ModelMap modelMap, HttpServletRequest request)",
+        "description": "This method retrieves the current user's username from the request, retrieves the staff object with that username from the StaffService, and retrieves the number of customers and inventory items from the CustomerService and InventoryService, respectively. It then adds these attributes to the model map and returns the view name /owner/owner."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. However, the number of methods defined in this controller may make it complex for some developers. The class has a clear and concise structure, with a single method that handles the /owner endpoint. The use of dependency injection makes the code more modular and easier to test. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Actor.java": {
+    "summary": "This file defines a Java class for an actor with properties such as actorId, firstName, lastName, and lastUpdate. The class also has methods for setting and getting the lastUpdate property.",
+    "methods": [
+      {
+        "name": "getActorId",
+        "signature": "int getActorId()",
+        "description": "Returns the actor ID."
+      },
+      {
+        "name": "setActorId",
+        "signature": "void setActorId(int actorId)",
+        "description": "Sets the actor ID."
+      },
+      {
+        "name": "getFirstName",
+        "signature": "String getFirstName()",
+        "description": "Returns the first name of the actor."
+      },
+      {
+        "name": "setFirstName",
+        "signature": "void setFirstName(String firstName)",
+        "description": "Sets the first name of the actor."
+      },
+      {
+        "name": "getLastName",
+        "signature": "String getLastName()",
+        "description": "Returns the last name of the actor."
+      },
+      {
+        "name": "setLastName",
+        "signature": "void setLastName(String lastName)",
+        "description": "Sets the last name of the actor."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the timestamp of the last update of the actor."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the timestamp of the last update of the actor."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the lastUpdate property of the actor."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are defined with clear names and signatures, and their purposes are well-documented. The class follows the conventions of Java Persistence API (JPA) and uses annotations to define the mapping between the class properties and the database columns. The class has a simple structure and is easy to understand. The methods are straightforward and do not introduce any complexity. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Category.java": {
+    "summary": "This file defines a Java class named Category that represents a category in a database. The class is annotated with JPA annotations to map the class to a database table.",
+    "methods": [
+      {
+        "name": "getCategoryId",
+        "signature": "int getCategoryId()",
+        "description": "Returns the category ID of the category."
+      },
+      {
+        "name": "setCategoryId",
+        "signature": "void setCategoryId(int categoryId)",
+        "description": "Sets the category ID of the category."
+      },
+      {
+        "name": "getName",
+        "signature": "String getName()",
+        "description": "Returns the name of the category."
+      },
+      {
+        "name": "setName",
+        "signature": "void setName(String name)",
+        "description": "Sets the name of the category."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the timestamp of the last update of the category."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the timestamp of the last update of the category."
+      },
+      {
+        "name": "equals",
+        "signature": "boolean equals(Object o)",
+        "description": "Overrides the equals method to compare two categories based on their category ID, name, and last update."
+      },
+      {
+        "name": "hashCode",
+        "signature": "int hashCode()",
+        "description": "Overrides the hashCode method to generate a hash code for the category based on its category ID, name, and last update."
+      }
+    ],
+    "complexity_notes": "The class has a simple structure with getter and setter methods for the category ID, name, and last update. The equals and hashCode methods are also implemented to compare and hash the category objects. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Customer.java": {
+    "summary": "This is a Java class that represents a customer entity in a database. It has several methods to get and set the values of its attributes, such as customer ID, first name, last name, email, active status, creation date, and last update date.",
+    "methods": [
+      {
+        "name": "getCustomerId",
+        "signature": "int getCustomerId()",
+        "description": "Returns the customer's ID."
+      },
+      {
+        "name": "setCustomerId",
+        "signature": "void setCustomerId(int customerId)",
+        "description": "Sets the customer's ID."
+      },
+      {
+        "name": "getFirstName",
+        "signature": "String getFirstName()",
+        "description": "Returns the customer's first name."
+      },
+      {
+        "name": "setFirstName",
+        "signature": "void setFirstName(String firstName)",
+        "description": "Sets the customer's first name."
+      },
+      {
+        "name": "getLastName",
+        "signature": "String getLastName()",
+        "description": "Returns the customer's last name."
+      },
+      {
+        "name": "setLastName",
+        "signature": "void setLastName(String lastName)",
+        "description": "Sets the customer's last name."
+      },
+      {
+        "name": "getEmail",
+        "signature": "String getEmail()",
+        "description": "Returns the customer's email address."
+      },
+      {
+        "name": "setEmail",
+        "signature": "void setEmail(String email)",
+        "description": "Sets the customer's email address."
+      },
+      {
+        "name": "getActive",
+        "signature": "byte getActive()",
+        "description": "Returns the customer's active status (0 or 1)."
+      },
+      {
+        "name": "setActive",
+        "signature": "void setActive(byte active)",
+        "description": "Sets the customer's active status (0 or 1)."
+      },
+      {
+        "name": "getCreateDate",
+        "signature": "Timestamp getCreateDate()",
+        "description": "Returns the timestamp of when the customer was created."
+      },
+      {
+        "name": "setCreateDate",
+        "signature": "void setCreateDate(Timestamp createDate)",
+        "description": "Sets the timestamp of when the customer was created."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the timestamp of when the customer was last updated."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the timestamp of when the customer was last updated."
+      },
+      {
+        "name": "getActive",
+        "signature": "public byte getActive()",
+        "description": "Returns the active status of the customer."
+      },
+      {
+        "name": "setActive",
+        "signature": "public void setActive(byte active)",
+        "description": "Sets the active status of the customer."
+      },
+      {
+        "name": "getCreateDate",
+        "signature": "public Timestamp getCreateDate()",
+        "description": "Returns the creation date of the customer."
+      },
+      {
+        "name": "setCreateDate",
+        "signature": "public void setCreateDate(Timestamp createDate)",
+        "description": "Sets the creation date of the customer."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "public Timestamp getLastUpdate()",
+        "description": "Returns the last update date of the customer."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the last update date of the customer."
+      },
+      {
+        "name": "equals",
+        "signature": "public boolean equals(Object o)",
+        "description": "Overrides the equals method to compare two customer objects based on their attributes."
+      },
+      {
+        "name": "hashCode",
+        "signature": "public int hashCode()",
+        "description": "Overrides the hashCode method to generate a unique hash code for the customer object."
+      }
+    ],
+    "complexity_notes": "The class has a relatively simple structure with getter and setter methods for each property. The class also uses JPA annotations to define the mapping between the Java properties and the database columns. The code is well-structured and easy to understand. The methods are defined with clear names and signatures, and the class follows the JavaBeans naming convention. The complexity of the code is low, as it only contains basic getter and setter methods and an equals and hashCode method. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Film.java": {
+    "summary": "This is a Java class representing a film. It has methods to set and get various properties of the film, such as title, description, release year, rental duration, rental rate, length, replacement cost, rating, special features, and last update.",
+    "methods": [
+      {
+        "name": "setReleaseYear",
+        "signature": "public void setReleaseYear(int releaseYear)",
+        "description": "Sets the release year of the movie."
+      },
+      {
+        "name": "getRentalDuration",
+        "signature": "@Basic @Column(name = \"rental_duration\") public Integer getRentalDuration()",
+        "description": "Gets the rental duration of the movie."
+      },
+      {
+        "name": "setRentalDuration",
+        "signature": "public void setRentalDuration(Integer rentalDuration)",
+        "description": "Sets the rental duration of the movie."
+      },
+      {
+        "name": "getRentalRate",
+        "signature": "@Basic @Column(name = \"rental_rate\") public BigDecimal getRentalRate()",
+        "description": "Gets the rental rate of the movie."
+      },
+      {
+        "name": "setRentalRate",
+        "signature": "public void setRentalRate(BigDecimal rentalRate)",
+        "description": "Sets the rental rate of the movie."
+      },
+      {
+        "name": "getLength",
+        "signature": "@Basic @Column(name = \"length\") public Integer getLength()",
+        "description": "Gets the length of the movie."
+      },
+      {
+        "name": "setLength",
+        "signature": "public void setLength(Integer length)",
+        "description": "Sets the length of the movie."
+      },
+      {
+        "name": "getReplacementCost",
+        "signature": "@Basic @Column(name = \"replacement_cost\") public BigDecimal getReplacementCost()",
+        "description": "Gets the replacement cost of the movie."
+      },
+      {
+        "name": "setReplacementCost",
+        "signature": "public void setReplacementCost(BigDecimal replacementCost)",
+        "description": "Sets the replacement cost of the movie."
+      },
+      {
+        "name": "getRating",
+        "signature": "@Basic @Column(name = \"rating\") public String getRating()",
+        "description": "Gets the rating of the movie."
+      },
+      {
+        "name": "setRating",
+        "signature": "public void setRating(String rating)",
+        "description": "Sets the rating of the movie."
+      },
+      {
+        "name": "getSpecialFeatures",
+        "signature": "@Basic @Column(name = \"special_features\") public String getSpecialFeatures()",
+        "description": "Gets the special features of the movie."
+      },
+      {
+        "name": "setSpecialFeatures",
+        "signature": "public void setSpecialFeatures(String specialFeatures)",
+        "description": "Sets the special features of the movie."
+      },
+      {
+        "name": "setSpecialFeatures",
+        "signature": "public void setSpecialFeatures(String specialFeatures)",
+        "description": "Sets the special features of the film."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "public Timestamp getLastUpdate()",
+        "description": "Gets the last update time of the film."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the last update time of the film."
+      },
+      {
+        "name": "equals",
+        "signature": "public boolean equals(Object o)",
+        "description": "Overrides the equals method to compare two films based on their properties."
+      },
+      {
+        "name": "hashCode",
+        "signature": "public int hashCode()",
+        "description": "Overrides the hashCode method to generate a hash code for the film object."
+      }
+    ],
+    "complexity_notes": "The code seems to be well-structured and easy to understand. The methods are defined with clear names and signatures, and their purposes are well-documented. However, the class may become more complex if additional methods or attributes are added. The class has a moderate level of complexity due to the number of methods and properties. The equals and hashCode methods are implemented to compare and hash the film object, which may increase the complexity of the class. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmActor.java": {
+    "summary": "This is a Java class that represents a table in a SQL database called 'sakila' with columns 'actor_id', 'film_id', and 'last_update'. It is annotated with JPA and has a primary key defined by the FilmActorPK class.",
+    "methods": [
+      {
+        "name": "getActorId",
+        "signature": "int getActorId()",
+        "description": "Returns the value of the 'actor_id' column."
+      },
+      {
+        "name": "setActorId",
+        "signature": "void setActorId(int actorId)",
+        "description": "Sets the value of the 'actor_id' column."
+      },
+      {
+        "name": "getFilmId",
+        "signature": "int getFilmId()",
+        "description": "Returns the value of the 'film_id' column."
+      },
+      {
+        "name": "setFilmId",
+        "signature": "void setFilmId(int filmId)",
+        "description": "Sets the value of the 'film_id' column."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the value of the 'last_update' column."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the value of the 'last_update' column."
+      },
+      {
+        "name": "equals",
+        "signature": "boolean equals(Object o)",
+        "description": "Implements the equals method for the class."
+      },
+      {
+        "name": "hashCode",
+        "signature": "int hashCode()",
+        "description": "Implements the hashCode method for the class."
+      }
+    ],
+    "complexity_notes": "The class has a simple structure with getter and setter methods for the columns and JPA annotations for mapping to the database. The equals and hashCode methods are also implemented for comparison and hashing purposes. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmActorPK.java": {
+    "summary": "This file defines a Java class named FilmActorPK that implements the Serializable interface. It has two integer fields, actorId and filmId, which are annotated with @Column and @Id annotations. The class also overrides the equals() and hashCode() methods to provide equality and hash code functionality.",
+    "methods": [
+      {
+        "name": "getActorId",
+        "signature": "public Integer getActorId()",
+        "description": "Returns the value of the actorId field."
+      },
+      {
+        "name": "setActorId",
+        "signature": "public void setActorId(int actorId)",
+        "description": "Sets the value of the actorId field."
+      },
+      {
+        "name": "getFilmId",
+        "signature": "public int getFilmId()",
+        "description": "Returns the value of the filmId field."
+      },
+      {
+        "name": "setFilmId",
+        "signature": "public void setFilmId(int filmId)",
+        "description": "Sets the value of the filmId field."
+      },
+      {
+        "name": "equals",
+        "signature": "public boolean equals(Object o)",
+        "description": "Overrides the equals() method to provide equality functionality based on the actorId and filmId fields."
+      },
+      {
+        "name": "hashCode",
+        "signature": "public int hashCode()",
+        "description": "Overrides the hashCode() method to provide hash code functionality based on the actorId and filmId fields."
+      }
+    ],
+    "complexity_notes": "The class has a simple structure with two integer fields and basic getter and setter methods. The equals() and hashCode() methods are also implemented to provide equality and hash code functionality. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmCategory.java": {
+    "summary": "This file defines a Java class called FilmCategory that represents a table in a SQL database called film_category. The class has three instance variables: filmId, categoryId, and lastUpdate, and three getter and setter methods for these variables. The class also overrides the equals and hashCode methods to provide equality and hash code functionality.",
+    "methods": [
+      {
+        "name": "getFilmId",
+        "signature": "int getFilmId()",
+        "description": "Returns the value of the filmId instance variable."
+      },
+      {
+        "name": "setFilmId",
+        "signature": "void setFilmId(Integer filmId)",
+        "description": "Sets the value of the filmId instance variable."
+      },
+      {
+        "name": "getCategoryId",
+        "signature": "int getCategoryId()",
+        "description": "Returns the value of the categoryId instance variable."
+      },
+      {
+        "name": "setCategoryId",
+        "signature": "void setCategoryId(Integer categoryId)",
+        "description": "Sets the value of the categoryId instance variable."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the value of the lastUpdate instance variable."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the value of the lastUpdate instance variable."
+      },
+      {
+        "name": "equals",
+        "signature": "boolean equals(Object o)",
+        "description": "Overrides the equals method to provide equality functionality based on the filmId, categoryId, and lastUpdate instance variables."
+      },
+      {
+        "name": "hashCode",
+        "signature": "int hashCode()",
+        "description": "Overrides the hashCode method to provide hash code functionality based on the filmId, categoryId, and lastUpdate instance variables."
+      }
+    ],
+    "complexity_notes": "The class has a relatively simple structure with a few instance variables and getter/setter methods. The overriding of the equals and hashCode methods adds some complexity to the class, but overall it is straightforward. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmCategoryPK.java": {
+    "summary": "This file defines a Java class named FilmCategoryPK that represents a primary key for the FilmCategory table in a database. It has two integer fields, filmId and categoryId, which are both primary keys.",
+    "methods": [
+      {
+        "name": "getFilmId",
+        "signature": "int getFilmId()",
+        "description": "Returns the value of the filmId field."
+      },
+      {
+        "name": "setFilmId",
+        "signature": "void setFilmId(int filmId)",
+        "description": "Sets the value of the filmId field."
+      },
+      {
+        "name": "getCategoryId",
+        "signature": "int getCategoryId()",
+        "description": "Returns the value of the categoryId field."
+      },
+      {
+        "name": "setCategoryId",
+        "signature": "void setCategoryId(int categoryId)",
+        "description": "Sets the value of the categoryId field."
+      },
+      {
+        "name": "equals",
+        "signature": "boolean equals(Object o)",
+        "description": "Overrides the equals method to compare this object with another object of the same class."
+      },
+      {
+        "name": "hashCode",
+        "signature": "int hashCode()",
+        "description": "Overrides the hashCode method to generate a hash code for this object."
+      }
+    ],
+    "complexity_notes": "The class has a simple structure with only two fields and basic getter and setter methods. The equals and hashCode methods are also implemented to support equality and hashing of objects. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\FilmText.java": {
+    "summary": "",
+    "methods": [],
+    "complexity_notes": ""
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Inventory.java": {
+    "summary": "This file defines an entity class for the Inventory table in a database. It has three fields: inventoryId, filmId, and lastUpdate. The class also includes getter and setter methods for these fields, as well as an equals and hashCode method for comparing and identifying objects.",
+    "methods": [
+      {
+        "name": "getInventoryId",
+        "signature": "int getInventoryId()",
+        "description": "Returns the value of the inventoryId field."
+      },
+      {
+        "name": "setInventoryId",
+        "signature": "void setInventoryId(int inventoryId)",
+        "description": "Sets the value of the inventoryId field."
+      },
+      {
+        "name": "getFilmId",
+        "signature": "int getFilmId()",
+        "description": "Returns the value of the filmId field."
+      },
+      {
+        "name": "setFilmId",
+        "signature": "void setFilmId(int filmId)",
+        "description": "Sets the value of the filmId field."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the value of the lastUpdate field."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the value of the lastUpdate field."
+      },
+      {
+        "name": "equals",
+        "signature": "boolean equals(Object o)",
+        "description": "Compares this object with the specified object and returns true if they are equal."
+      },
+      {
+        "name": "hashCode",
+        "signature": "int hashCode()",
+        "description": "Returns a hash code for this object."
+      }
+    ],
+    "complexity_notes": "The class has a relatively simple structure with getter and setter methods for the fields, as well as an equals and hashCode method for comparing and identifying objects. The complexity of the class is likely to be low, as it only contains basic functionality. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Order.java": {
+    "summary": "This file defines a Java class named Order that represents an order in a movie rental system. The class has three instance variables: Customer, Film, and Rental, and four methods: getCustomer(), setCustomer(), getFilm(), and setFilm().",
+    "methods": [
+      {
+        "name": "getCustomer",
+        "signature": "Customer getCustomer()",
+        "description": "Returns the customer associated with the order."
+      },
+      {
+        "name": "setCustomer",
+        "signature": "void setCustomer(Customer customer)",
+        "description": "Sets the customer associated with the order."
+      },
+      {
+        "name": "getFilm",
+        "signature": "Film getFilm()",
+        "description": "Returns the film associated with the order."
+      },
+      {
+        "name": "setFilm",
+        "signature": "void setFilm(Film film)",
+        "description": "Sets the film associated with the order."
+      }
+    ],
+    "complexity_notes": "The structure of this class is straightforward and easy to understand. The methods are simple getter and setter methods that allow access to the instance variables. There are no complex algorithms or data structures used in this class. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Rental.java": {
+    "summary": "This is a Java class that represents a rental record in a database. It has methods to set and get various properties of the rental record, including the rental date, return date, staff ID, inventory ID, customer ID, and last update timestamp.",
+    "methods": [
+      {
+        "name": "getRentalId",
+        "signature": "int getRentalId()",
+        "description": "Returns the rental ID of the rental transaction."
+      },
+      {
+        "name": "setRentalId",
+        "signature": "void setRentalId(int rentalId)",
+        "description": "Sets the rental ID of the rental transaction."
+      },
+      {
+        "name": "getRentalDate",
+        "signature": "Timestamp getRentalDate()",
+        "description": "Returns the rental date of the rental transaction."
+      },
+      {
+        "name": "setRentalDate",
+        "signature": "void setRentalDate(Timestamp rentalDate)",
+        "description": "Sets the rental date of the rental transaction."
+      },
+      {
+        "name": "getInventoryId",
+        "signature": "int getInventoryId()",
+        "description": "Returns the inventory ID of the rental transaction."
+      },
+      {
+        "name": "setInventoryId",
+        "signature": "void setInventoryId(int inventoryId)",
+        "description": "Sets the inventory ID of the rental transaction."
+      },
+      {
+        "name": "getCustomerId",
+        "signature": "int getCustomerId()",
+        "description": "Returns the customer ID of the rental transaction."
+      },
+      {
+        "name": "setCustomerId",
+        "signature": "void setCustomerId(int customerId)",
+        "description": "Sets the customer ID of the rental transaction."
+      },
+      {
+        "name": "getReturnDate",
+        "signature": "Timestamp getReturnDate()",
+        "description": "Returns the return date of the rental transaction."
+      },
+      {
+        "name": "setReturnDate",
+        "signature": "void setReturnDate(Timestamp returnDate)",
+        "description": "Sets the return date of the rental transaction."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the last update date of the rental transaction."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the last update date of the rental transaction."
+      },
+      {
+        "name": "getStaffId",
+        "signature": "int getStaffId()",
+        "description": "Returns the staff ID of the rental transaction."
+      },
+      {
+        "name": "setStaffId",
+        "signature": "void setStaffId(int staffId)",
+        "description": "Sets the staff ID of the rental transaction."
+      },
+      {
+        "name": "setReturnDate",
+        "signature": "public void setReturnDate(Timestamp returnDate)",
+        "description": "Sets the return date of the rental record."
+      },
+      {
+        "name": "getStaffId",
+        "signature": "public int getStaffId()",
+        "description": "Gets the staff ID of the rental record."
+      },
+      {
+        "name": "setStaffId",
+        "signature": "public void setStaffId(int staffId)",
+        "description": "Sets the staff ID of the rental record."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "public Timestamp getLastUpdate()",
+        "description": "Gets the last update timestamp of the rental record."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the last update timestamp of the rental record."
+      },
+      {
+        "name": "equals",
+        "signature": "public boolean equals(Object o)",
+        "description": "Overrides the equals method to compare two rental records based on their properties."
+      },
+      {
+        "name": "hashCode",
+        "signature": "public int hashCode()",
+        "description": "Overrides the hashCode method to generate a hash code for the rental record based on its properties."
+      }
+    ],
+    "complexity_notes": "The class has 12 methods and properties, which is a reasonable number for a class representing a rental transaction. The class also uses JPA annotations, which may add some complexity to the codebase. The class has a moderate level of complexity due to the number of methods and properties. However, the methods are relatively simple and straightforward, making the overall complexity manageable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\entities\\Staff.java": {
+    "summary": "This is a Java class that represents a staff member. It has methods to set and get the staff's attributes such as staffId, firstName, lastName, email, active, username, password, picture, and lastUpdate.",
+    "methods": [
+      {
+        "name": "getStaffId",
+        "signature": "int getStaffId()",
+        "description": "Returns the staff ID of the current staff member."
+      },
+      {
+        "name": "setStaffId",
+        "signature": "void setStaffId(int staffId)",
+        "description": "Sets the staff ID of the current staff member."
+      },
+      {
+        "name": "getFirstName",
+        "signature": "String getFirstName()",
+        "description": "Returns the first name of the current staff member."
+      },
+      {
+        "name": "setFirstName",
+        "signature": "void setFirstName(String firstName)",
+        "description": "Sets the first name of the current staff member."
+      },
+      {
+        "name": "getLastName",
+        "signature": "String getLastName()",
+        "description": "Returns the last name of the current staff member."
+      },
+      {
+        "name": "setLastName",
+        "signature": "void setLastName(String lastName)",
+        "description": "Sets the last name of the current staff member."
+      },
+      {
+        "name": "getPicture",
+        "signature": "byte[] getPicture()",
+        "description": "Returns the picture of the current staff member."
+      },
+      {
+        "name": "setPicture",
+        "signature": "void setPicture(byte[] picture)",
+        "description": "Sets the picture of the current staff member."
+      },
+      {
+        "name": "getEmail",
+        "signature": "String getEmail()",
+        "description": "Returns the email of the current staff member."
+      },
+      {
+        "name": "setEmail",
+        "signature": "void setEmail(String email)",
+        "description": "Sets the email of the current staff member."
+      },
+      {
+        "name": "getActive",
+        "signature": "byte getActive()",
+        "description": "Returns the active status of the current staff member."
+      },
+      {
+        "name": "setActive",
+        "signature": "void setActive(byte active)",
+        "description": "Sets the active status of the current staff member."
+      },
+      {
+        "name": "getUsername",
+        "signature": "String getUsername()",
+        "description": "Returns the username of the current staff member."
+      },
+      {
+        "name": "setUsername",
+        "signature": "void setUsername(String username)",
+        "description": "Sets the username of the current staff member."
+      },
+      {
+        "name": "getPassword",
+        "signature": "String getPassword()",
+        "description": "Returns the password of the current staff member."
+      },
+      {
+        "name": "setPassword",
+        "signature": "void setPassword(String password)",
+        "description": "Sets the password of the current staff member."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "Timestamp getLastUpdate()",
+        "description": "Returns the last update timestamp of the current staff member."
+      },
+      {
+        "name": "getEmail",
+        "signature": "public String getEmail()",
+        "description": "Returns the value of the email property."
+      },
+      {
+        "name": "setEmail",
+        "signature": "public void setEmail(String email)",
+        "description": "Sets the value of the email property."
+      },
+      {
+        "name": "getActive",
+        "signature": "public byte getActive()",
+        "description": "Returns the value of the active property."
+      },
+      {
+        "name": "setActive",
+        "signature": "public void setActive(byte active)",
+        "description": "Sets the value of the active property."
+      },
+      {
+        "name": "getUsername",
+        "signature": "public String getUsername()",
+        "description": "Returns the value of the username property."
+      },
+      {
+        "name": "setUsername",
+        "signature": "public void setUsername(String username)",
+        "description": "Sets the value of the username property."
+      },
+      {
+        "name": "getPassword",
+        "signature": "public String getPassword()",
+        "description": "Returns the value of the password property."
+      },
+      {
+        "name": "setPassword",
+        "signature": "public void setPassword(String password)",
+        "description": "Sets the value of the password property."
+      },
+      {
+        "name": "getLastUpdate",
+        "signature": "public Timestamp getLastUpdate()",
+        "description": "Returns the value of the lastUpdate property."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the value of the lastUpdate property."
+      },
+      {
+        "name": "setLastUpdate",
+        "signature": "public void setLastUpdate(Timestamp lastUpdate)",
+        "description": "Sets the last update timestamp of the staff member."
+      },
+      {
+        "name": "equals",
+        "signature": "@Override public boolean equals(Object o)",
+        "description": "Overrides the equals method to compare two staff members based on their attributes."
+      },
+      {
+        "name": "hashCode",
+        "signature": "@Override public int hashCode()",
+        "description": "Overrides the hashCode method to generate a hash code for the staff member."
+      }
+    ],
+    "complexity_notes": "The class has a total of 12 methods, which is a moderate number. The methods are mostly getter and setter methods, which are straightforward and easy to understand. The class also uses JPA annotations, which may add some complexity to the code. Overall, the class seems well-structured and easy to maintain. The class has a relatively simple structure with getter and setter methods for each property. The use of annotations such as @Basic and @Column indicates that this class is likely part of an ORM (Object-Relational Mapping) framework, which can add complexity to the codebase. The code is well-structured and easy to understand. The methods are defined with clear signatures and descriptions. The use of the Objects class for equality and hash code generation is a good practice. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\ActorRepository.java": {
+    "summary": "This file defines an interface for a repository that handles CRUD operations on the Actor entity in a Spring Boot application.",
+    "methods": [
+      {
+        "name": "findActorsByFirstNameAndLastName",
+        "signature": "List<Actor> findActorsByFirstNameAndLastName(String firstName, String lastName)",
+        "description": "Returns a list of actors whose first name and last name match the given values."
+      },
+      {
+        "name": "findActorsByFirstName",
+        "signature": "List<Actor> findActorsByFirstName(String firstName)",
+        "description": "Returns a list of actors whose first name matches the given value."
+      },
+      {
+        "name": "findActorsByLastName",
+        "signature": "List<Actor> findActorsByLastName(String lastName)",
+        "description": "Returns a list of actors whose last name matches the given value."
+      },
+      {
+        "name": "getActorByActorId",
+        "signature": "Actor getActorByActorId(Integer id)",
+        "description": "Returns the actor with the given ID, or null if no actor with that ID exists."
+      }
+    ],
+    "complexity_notes": "The methods in this interface are relatively simple and straightforward, with clear signatures and descriptions. The repository pattern used by Spring Data JPA simplifies the implementation of CRUD operations on entities, making it easy to add new methods or modify existing ones as needed. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\CategoryRepository.java": {
+    "summary": "This file defines an interface for a repository that manages the persistence of Category entities in a database using JPA.",
+    "methods": [
+      {
+        "name": "getCategoryByCategoryId",
+        "signature": "Category getCategoryByCategoryId(Integer id)",
+        "description": "Returns a Category entity by its ID."
+      }
+    ],
+    "complexity_notes": "The code is simple and straightforward, with only one method defined in the interface. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\CustomerRepository.java": {
+    "summary": "This file defines a repository interface for managing customer data in a database.",
+    "methods": [
+      {
+        "name": "getCustomerByCredentials",
+        "signature": "Customer getCustomerByCredentials(String username, Integer password)",
+        "description": "Returns a customer object by their email and password."
+      },
+      {
+        "name": "getCustomerByUsername",
+        "signature": "Customer getCustomerByUsername(String username)",
+        "description": "Returns a customer object by their email."
+      },
+      {
+        "name": "getCustomersByFirstName",
+        "signature": "List<Customer> getCustomersByFirstName(String firstName)",
+        "description": "Returns a list of customer objects by their first name."
+      },
+      {
+        "name": "getCustomersByLastName",
+        "signature": "List<Customer> getCustomersByLastName(String lastName)",
+        "description": "Returns a list of customer objects by their last name."
+      },
+      {
+        "name": "getCustomersByFullName",
+        "signature": "List<Customer> getCustomersByFullName(String firstName, String lastName)",
+        "description": "Returns a list of customer objects by their first and last names."
+      },
+      {
+        "name": "getCustomerByCustomerId",
+        "signature": "Customer getCustomerByCustomerId(Integer id)",
+        "description": "Returns a customer object by their ID."
+      },
+      {
+        "name": "getCustomerByEmail",
+        "signature": "Customer getCustomerByEmail(String email)",
+        "description": "Returns a customer object by their email."
+      },
+      {
+        "name": "getCustomerCount",
+        "signature": "Integer getCustomerCount()",
+        "description": "Returns the total number of customers in the database."
+      }
+    ],
+    "complexity_notes": "The methods in this file are relatively simple and straightforward, with clear signatures and descriptions. The use of native queries may add some complexity to the implementation, but overall the structure and complexity of this file is manageable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\FilmRepository.java": {
+    "summary": "This file defines a repository interface for managing films in a database using Spring Data JPA.",
+    "methods": [
+      {
+        "name": "getAvailableFilmCount",
+        "signature": "Integer getAvailableFilmCount(Integer id)",
+        "description": "Returns the number of available films with the given ID."
+      },
+      {
+        "name": "getAvailableFilms",
+        "signature": "List<Film> getAvailableFilms()",
+        "description": "Returns a list of all available films."
+      },
+      {
+        "name": "getAllFilmsByCategory",
+        "signature": "List<Film> getAllFilmsByCategory(Integer categoryId)",
+        "description": "Returns a list of all films in a given category."
+      },
+      {
+        "name": "getAllFilmsByActor",
+        "signature": "List<Film> getAllFilmsByActor(Integer actorId)",
+        "description": "Returns a list of all films starring a given actor."
+      }
+    ],
+    "complexity_notes": "The methods in this file are relatively simple and straightforward, with a clear purpose and signature. The use of native queries may add some complexity to the code, but overall the structure is well-organized and easy to understand. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\InventoryRepository.java": {
+    "summary": "This file defines an interface for a repository that handles CRUD operations on the Inventory entity in a Java Spring Boot application.",
+    "methods": [
+      {
+        "name": "getInventoriesByInventoryId",
+        "signature": "Inventory getInventoriesByInventoryId(Integer inventoryId)",
+        "description": "Returns the inventory with the specified inventory ID."
+      },
+      {
+        "name": "deleteInventoryByInventoryId",
+        "signature": "void deleteInventoryByInventoryId(@Param(\"id\")Integer id)",
+        "description": "Deletes the inventory with the specified inventory ID."
+      },
+      {
+        "name": "getInventoryCount",
+        "signature": "Integer getInventoryCount()",
+        "description": "Returns the total number of inventories in the system."
+      }
+    ],
+    "complexity_notes": "The methods in this interface are relatively simple and straightforward, with clear names and signatures that indicate their purpose. The use of native queries for some methods may indicate a need for more complex SQL queries, but the overall structure of the interface is straightforward and easy to understand. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\RentalRepository.java": {
+    "summary": "This file defines a Java interface for a repository that handles CRUD operations on the Rental entity in a Spring Boot application.",
+    "methods": [
+      {
+        "name": "getRentalByRentalId",
+        "signature": "Rental getRentalByRentalId(Integer id)",
+        "description": "Retrieves a rental by its ID."
+      },
+      {
+        "name": "getRentalByCustomerId",
+        "signature": "List<Rental> getRentalByCustomerId(Integer customerId)",
+        "description": "Retrieves all rentals associated with a given customer ID."
+      }
+    ],
+    "complexity_notes": "The interface extends the JpaRepository interface, which provides basic CRUD operations for JPA entities. The methods defined in this interface are simple and straightforward, with clear and concise signatures and descriptions. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\respositories\\StaffRepository.java": {
+    "summary": "This file defines a JpaRepository interface for the Staff entity in a Spring Boot application.",
+    "methods": [
+      {
+        "name": "getStaffByUsername",
+        "signature": "Staff getStaffByUsername(String username)",
+        "description": "Returns a Staff object with the given username."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The use of nativeQuery is a potential security concern, as it can lead to SQL injection attacks if not properly sanitized. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\securingweb\\FailureHandler.java": {
+    "summary": "This file is a Java component that implements the AccessDeniedHandler interface from the Spring Security framework. It handles access denied exceptions by redirecting the user to an error page.",
+    "methods": [
+      {
+        "name": "handle",
+        "signature": "void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException",
+        "description": "Handles access denied exceptions by redirecting the user to an error page."
+      }
+    ],
+    "complexity_notes": "The code is simple and easy to understand. It only has one method that performs a single task. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\securingweb\\MvcConfig.java": {
+    "summary": "This is a Java file that implements the WebMvcConfigurer interface to configure Spring MVC web application.",
+    "methods": [
+      {
+        "name": "addViewControllers",
+        "signature": "void addViewControllers(ViewControllerRegistry registry)",
+        "description": "This method registers view controllers for the Spring MVC web application. It sets the view name for each URL path."
+      }
+    ],
+    "complexity_notes": "The code is simple and easy to understand. It only has one method that registers view controllers for the web application. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\securingweb\\SuccessHandler.java": {
+    "summary": "This is a Java class that implements the AuthenticationSuccessHandler interface and handles successful authentication by redirecting the user to a specific URL based on their role.",
+    "methods": [
+      {
+        "name": "handle",
+        "signature": "void handle(Authentication authentication)",
+        "description": "This method is called when a user is successfully authenticated. It sets the redirect strategy and redirects the user to the specified URL."
+      },
+      {
+        "name": "onAuthenticationSuccess",
+        "signature": "public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException",
+        "description": "This method is called when authentication is successful. It retrieves the user's roles from the authentication object and redirects the user to a specific URL based on their role."
+      }
+    ],
+    "complexity_notes": "The code is relatively simple and straightforward. It only has one method that handles the successful authentication of a user and redirects them to the specified URL. There are no complex data structures or algorithms used in this code. The code is relatively simple and easy to understand. The only complexity is the use of the RedirectStrategy interface, which may require additional configuration or setup. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\securingweb\\UserDetailsServiceImpl.java": {
+    "summary": "This file is a Java class that builds a User object based on input parameters.",
+    "methods": [
+      {
+        "name": "loadUserByUsername",
+        "signature": "public UserDetails loadUserByUsername(String anyUsername) throws UsernameNotFoundException",
+        "description": "This method loads user details from the database based on the provided username. If the user is not found, a UsernameNotFoundException is thrown."
+      },
+      {
+        "name": "buildUser",
+        "signature": "User.UserBuilder buildUser(Customer customer, Staff staff)",
+        "description": "This method takes in a Customer and/or Staff object and returns a User object built with the appropriate username, password, and roles."
+      }
+    ],
+    "complexity_notes": "The code is relatively simple and straightforward. The only complexity comes from the use of multiple repositories to retrieve user details from the database. The code is relatively simple and easy to understand. However, the use of the BCryptPasswordEncoder may add some complexity to the password encoding process. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\securingweb\\WebSecurityConfig.java": {
+    "summary": "This file is a Java configuration class for Spring Security. It defines beans for UserDetailsService, PasswordEncoder, and DaoAuthenticationProvider, and configures the AuthenticationManager.",
+    "methods": [
+      {
+        "name": "configureGlobal",
+        "signature": "void configureGlobal(AuthenticationManagerBuilder auth)",
+        "description": "Configures the authentication manager builder to use a DaoAuthenticationProvider and a UserDetailsService."
+      },
+      {
+        "name": "configure",
+        "signature": "void configure(HttpSecurity http)",
+        "description": "Configures the HTTP security to require authentication for certain URLs and to use a success handler for successful authentication."
+      },
+      {
+        "name": "setSuccessHandler",
+        "signature": "void setSuccessHandler(SuccessHandler successHandler)",
+        "description": "Sets the success handler to be used for successful authentication."
+      },
+      {
+        "name": "configure",
+        "signature": "protected void configure(HttpSecurity http) throws Exception",
+        "description": "This method defines the security rules for the application. It specifies which URL paths should be secured and which should not, and sets up authentication and authorization for those paths."
+      },
+      {
+        "name": "@Bean",
+        "signature": "public <T> @Bean methodName(T t)",
+        "description": "Defines a bean for the specified type."
+      },
+      {
+        "name": "@Override",
+        "signature": "public <T> @Override methodName(T t)",
+        "description": "Overrides a method with the same name and signature in a superclass."
+      },
+      {
+        "name": "userDetailsService",
+        "signature": "public UserDetailsService userDetailsService()",
+        "description": "Returns a new instance of UserDetailsServiceImpl."
+      },
+      {
+        "name": "passwordEncoder",
+        "signature": "public PasswordEncoder passwordEncoder()",
+        "description": "Returns a new instance of BCryptPasswordEncoder."
+      },
+      {
+        "name": "authenticationProvider",
+        "signature": "public DaoAuthenticationProvider authenticationProvider()",
+        "description": "Returns a new instance of DaoAuthenticationProvider with the specified UserDetailsService and PasswordEncoder."
+      },
+      {
+        "name": "configure",
+        "signature": "protected void configure(AuthenticationManagerBuilder auth) throws Exception",
+        "description": "Configures the AuthenticationManager with the specified authenticationProvider."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to read. The use of Spring Security annotations makes it easy to configure the authentication and authorization for the application. The code is relatively simple and easy to understand. However, the use of Spring Security may add some complexity to the application. The structure of this file is straightforward and easy to understand. The complexity of the code is low as it only defines beans and configures the AuthenticationManager. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\ActorService.java": {
+    "summary": "This file defines a Java class called ActorService that provides methods for interacting with actors in a database.",
+    "methods": [
+      {
+        "name": "getAllActors",
+        "signature": "List<Actor> getAllActors()",
+        "description": "Returns a list of all actors in the database."
+      },
+      {
+        "name": "getActorByID",
+        "signature": "Actor getActorByID(int id)",
+        "description": "Returns an actor with the specified ID."
+      },
+      {
+        "name": "getActorsByFullName",
+        "signature": "List<Actor> getActorsByFullName(String firstName, String lastName)",
+        "description": "Returns a list of actors with the specified first and last names."
+      },
+      {
+        "name": "getActorsByFirstName",
+        "signature": "List<Actor> getActorsByFirstName(String firstName)",
+        "description": "Returns a list of actors with the specified first name."
+      },
+      {
+        "name": "getActorsByLastName",
+        "signature": "List<Actor> getActorsByLastName(String lastName)",
+        "description": "Returns a list of actors with the specified last name."
+      },
+      {
+        "name": "getActorFullNameFromID",
+        "signature": "String getActorFullNameFromID(Integer id)",
+        "description": "Returns the full name of an actor with the specified ID."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are well-named and have clear signatures. The class follows the SOLID principles and is testable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\CategoryService.java": {
+    "summary": "This file defines a Java service class for managing categories in a Sakila project. The service class uses a repository to interact with the database and provides methods for retrieving and retrieving a category by ID.",
+    "methods": [
+      {
+        "name": "getAllCategories",
+        "signature": "List<Category> getAllCategories()",
+        "description": "Returns a list of all categories in the database."
+      },
+      {
+        "name": "getByCategoryId",
+        "signature": "Category getByCategoryId(Integer id)",
+        "description": "Returns the category with the specified ID or null if not found."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are simple and straightforward, making it easy to maintain and extend the code. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\CustomerService.java": {
+    "summary": "This file defines a Java class named CustomerService that provides methods for managing customers in a database.",
+    "methods": [
+      {
+        "name": "getAllCustomers",
+        "signature": "List<Customer> getAllCustomers()",
+        "description": "Returns a list of all customers in the database."
+      },
+      {
+        "name": "getCustomersByFirstName",
+        "signature": "List<Customer> getCustomersByFirstName(String firstName)",
+        "description": "Returns a list of customers whose first name matches the given first name."
+      },
+      {
+        "name": "getCustomersByLastName",
+        "signature": "List<Customer> getCustomersByLastName(String lastName)",
+        "description": "Returns a list of customers whose last name matches the given last name."
+      },
+      {
+        "name": "getCustomersByFullName",
+        "signature": "List<Customer> getCustomersByFullName(String firstName, String lastName)",
+        "description": "Returns a list of customers whose full name (first name and last name) matches the given first name and last name."
+      },
+      {
+        "name": "getCustomerByID",
+        "signature": "Customer getCustomerByID(int id)",
+        "description": "Returns the customer with the given ID from the database."
+      },
+      {
+        "name": "getCustomerByEmail",
+        "signature": "Customer getCustomerByEmail(String email)",
+        "description": "Returns the customer with the given email address from the database."
+      },
+      {
+        "name": "save",
+        "signature": "void save(Customer customer)",
+        "description": "Saves the given customer to the database."
+      },
+      {
+        "name": "getCustomerCount",
+        "signature": "Integer getCustomerCount()",
+        "description": "Returns the total number of customers in the database."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to read. The methods are well-documented and follow a consistent naming convention. The class uses a repository to interact with the database, which helps to keep the code modular and maintainable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\FilmService.java": {
+    "summary": "This file defines a Java class named FilmService that provides methods for managing films in a database. The class is annotated with @Service and @Transactional, indicating that it is a Spring-managed service that supports database transactions.",
+    "methods": [
+      {
+        "name": "getAllFilms",
+        "signature": "List<Film> getAllFilms()",
+        "description": "Returns a list of all films in the database."
+      },
+      {
+        "name": "getFilmByID",
+        "signature": "Film getFilmByID(int id)",
+        "description": "Returns a film by its ID."
+      },
+      {
+        "name": "getFilmsByTitle",
+        "signature": "List<Film> getFilmsByTitle(String title)",
+        "description": "Returns a list of films that match a given title."
+      },
+      {
+        "name": "getAvailableFilms",
+        "signature": "List<Film> getAvailableFilms()",
+        "description": "Returns a list of films that are currently available for rental."
+      },
+      {
+        "name": "getAvailableFilmCount",
+        "signature": "Integer getAvailableFilmCount(Integer id)",
+        "description": "Returns the number of available films for a given film ID."
+      },
+      {
+        "name": "getFilmsByCategory",
+        "signature": "List<Film> getFilmsByCategory(Integer id)",
+        "description": "Returns a list of films that belong to a given category."
+      },
+      {
+        "name": "getFilmsByActor",
+        "signature": "List<Film> getFilmsByActor(Integer id)",
+        "description": "Returns a list of films that feature a given actor."
+      },
+      {
+        "name": "save",
+        "signature": "void save(Film film)",
+        "description": "Saves a film to the database."
+      },
+      {
+        "name": "deleteFilmById",
+        "signature": "void deleteFilmById(int id)",
+        "description": "Deletes a film from the database by its ID."
+      }
+    ],
+    "complexity_notes": "The class has a moderate level of complexity due to the number of methods and their signatures. However, the methods are well-named and documented, making it easy to understand their purpose. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\InventoryService.java": {
+    "summary": "This is a Java class that implements the InventoryService interface. It provides methods for managing inventory items in a database.",
+    "methods": [
+      {
+        "name": "getAllInventory",
+        "signature": "List<Inventory> getAllInventory()",
+        "description": "Returns a list of all inventory items in the database."
+      },
+      {
+        "name": "getInventoriesById",
+        "signature": "Inventory getInventoriesById(Integer id)",
+        "description": "Returns an inventory item with the specified ID from the database."
+      },
+      {
+        "name": "deleteInventoryItemById",
+        "signature": "void deleteInventoryByInventoryId(Integer id)",
+        "description": "Deletes an inventory item with the specified ID from the database."
+      },
+      {
+        "name": "getInventoryCount",
+        "signature": "Integer getInventoryCount()",
+        "description": "Returns the total number of inventory items in the database."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are well-documented and follow best practices for Java development. The use of Spring annotations and repositories simplifies the code and makes it more maintainable. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\RentalService.java": {
+    "summary": "This is a Java class that implements the RentalService interface. It is responsible for managing rentals in a system.",
+    "methods": [
+      {
+        "name": "getRentalsByCustomer",
+        "signature": "List<Rental> getRentalsByCustomer(Integer id)",
+        "description": "Returns a list of rentals for a given customer."
+      },
+      {
+        "name": "addRental",
+        "signature": "void addRental(int inventoryId, int customerId, Timestamp returnDate)",
+        "description": "Adds a new rental to the system with the given inventory ID, customer ID, and return date."
+      }
+    ],
+    "complexity_notes": "The code is relatively simple and easy to understand. However, the use of the Timestamp class for dates may make it less flexible than using LocalDateTime. "
+  },
+  "SakilaProject\\src\\main\\java\\com\\sparta\\engineering72\\sakilaproject\\services\\StaffService.java": {
+    "summary": "This file defines a Java class named StaffService that provides methods for retrieving and managing staff data.",
+    "methods": [
+      {
+        "name": "getAllStaff",
+        "signature": "List<Staff> getAllStaff()",
+        "description": "Returns a list of all staff members."
+      },
+      {
+        "name": "getStaffByUsername",
+        "signature": "Staff getStaffByUsername(String username)",
+        "description": "Returns the staff member with the specified username."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The methods are simple and straightforward, making it easy to maintain and extend the codebase. "
+  },
+  "SakilaProject\\src\\test\\java\\com\\sparta\\engineering72\\sakilaproject\\MockTests.java": {
+    "summary": "This is a Java test file for a category repository.",
+    "methods": [
+      {
+        "name": "MockTests",
+        "signature": "public class MockTests",
+        "description": "The main class that contains the test methods."
+      },
+      {
+        "name": "testActorById",
+        "signature": "public void testActorById()",
+        "description": "Tests the functionality of the ActorController to retrieve an actor by their ID."
+      },
+      {
+        "name": "testActorByFirstName",
+        "signature": "public void testActorByFirstName()",
+        "description": "Tests the functionality of the ActorController to retrieve an actor by their first name."
+      },
+      {
+        "name": "testActorByLastName",
+        "signature": "public void testActorByLastName()",
+        "description": "Tests the ActorController's findActorById method with an actor whose last name is 'Gomez'."
+      },
+      {
+        "name": "testActorByMore",
+        "signature": "public void testActorByMore()",
+        "description": "Tests the ActorController's findActorById method with an actor whose first name is 'Justin', last name is 'Timberlake', and actor ID is 3."
+      },
+      {
+        "name": "testActorByFullName",
+        "signature": "public void testActorByFullName()",
+        "description": "Tests the ActorController's findActorById method with an actor whose first name is 'Leo', last name is 'DiCaprio', actor ID is 3, and last update timestamp is the current time."
+      },
+      {
+        "name": "testFilmByID",
+        "signature": "public void testFilmByID()",
+        "description": "Tests the film controller's ability to find a film by its ID."
+      },
+      {
+        "name": "testFilmByDescritption",
+        "signature": "public void testFilmByDescritption()",
+        "description": "Tests the film controller's ability to find a film by its description."
+      },
+      {
+        "name": "testFilmByRating",
+        "signature": "public void testFilmByRating()",
+        "description": "Tests the film controller's ability to find a film by its rating."
+      },
+      {
+        "name": "testFilmByLength",
+        "signature": "public void testFilmByLength()",
+        "description": "Tests the film controller's ability to find a film by its length."
+      },
+      {
+        "name": "testFilmByName",
+        "signature": "public void testFilmByName()",
+        "description": "Tests the FilmController's ability to find a film by its title."
+      },
+      {
+        "name": "testFilmByDescription",
+        "signature": "public void testFilmByDescription()",
+        "description": "Tests the FilmController's ability to find a film by its description."
+      },
+      {
+        "name": "testCategoryByName",
+        "signature": "public void testCategoryByName()",
+        "description": "Tests the retrieval of a category by name."
+      },
+      {
+        "name": "testCustomerById",
+        "signature": "public void testCustomerById()",
+        "description": "Tests the retrieval of a customer by ID."
+      },
+      {
+        "name": "testCustomer",
+        "signature": "public void testCustomer()",
+        "description": "Tests the retrieval of a customer by ID and verifies various fields."
+      },
+      {
+        "name": "testFilmController2",
+        "signature": "@Test public void testFilmController2()",
+        "description": "Tests the behavior of the FilmController when retrieving a list of films with a filter."
+      },
+      {
+        "name": "testCategory",
+        "signature": "@Test public void testCategory()",
+        "description": "Tests the behavior of the CategoryController when retrieving category details."
+      },
+      {
+        "name": "testCategory2",
+        "signature": "@Test public void testCategory2()",
+        "description": "Tests the behavior of the CategoryController when retrieving a list of categories."
+      },
+      {
+        "name": "testActorController1",
+        "signature": "@Test public void testActorController1()",
+        "description": "Tests the behavior of the ActorController when retrieving a list of actors based on a first and last name."
+      },
+      {
+        "name": "testInventory",
+        "signature": "public void testInventory()",
+        "description": "This method creates a new inventory with a film and a timestamp, and then retrieves the inventory from the repository to compare it with the original inventory."
+      },
+      {
+        "name": "testRental",
+        "signature": "public void testRental()",
+        "description": "This method creates a new Rental object and sets its properties. It then calls a mock method on the RentalRepository to retrieve the Rental object by its ID, and compares the retrieved object with the original object to ensure that they are equal."
+      },
+      {
+        "name": "testCategoryByTimeStamp",
+        "signature": "public void testCategoryByTimeStamp()",
+        "description": "This method tests the category repository by getting a category by its id and comparing its last update timestamp with the current timestamp."
+      }
+    ],
+    "complexity_notes": "The file has a moderate level of complexity due to the use of Mockito to mock various repositories and services. The code is well-structured and easy to understand, with clear method signatures and descriptions. The use of Mockito to mock dependencies and test the behavior of the services and controllers is a good practice for unit testing. The code is well-structured and easy to understand. The test cases are well-defined and cover different scenarios. The use of JUnit and Mockito for testing makes the code more maintainable and testable. The code is well-structured and easy to understand. The methods are well-named and have clear descriptions. The use of mock objects and assertions makes the tests easy to read and understand. The code is relatively simple and easy to understand. The test methods are well-structured and follow a consistent pattern. The code is well-structured and easy to understand. The use of the Mockito framework for mocking dependencies helps to keep the code clean and maintainable. The code appears to be well-structured and easy to understand. The use of ModelMap and the various controllers and services makes the code modular and maintainable. However, the number of methods and controllers may make the code more complex to navigate and understand for someone unfamiliar with the application. The code is relatively simple and easy to understand. However, the use of mock objects and the use of the Timestamp class may add some complexity to the code. The code is relatively simple and straightforward. The only potential complexity is the use of a mock object for the RentalRepository, which may require additional setup and teardown. The code is simple and easy to understand. "
+  },
+  "SakilaProject\\src\\test\\java\\com\\sparta\\engineering72\\sakilaproject\\SakilaProjectApplicationTests.java": {
+    "summary": "This file contains unit tests for the MainController class in the SakilaProjectApplication.",
+    "methods": [
+      {
+        "name": "MainController1",
+        "signature": "public void MainController1()",
+        "description": "Tests the home() method of the MainController class."
+      },
+      {
+        "name": "MainController2",
+        "signature": "public void MainController2()",
+        "description": "Tests the account() method of the MainController class."
+      },
+      {
+        "name": "MainController3",
+        "signature": "public void MainController3()",
+        "description": "Tests the login() method of the MainController class."
+      }
+    ],
+    "complexity_notes": "The code is well-structured and easy to understand. The test methods are simple and straightforward. "
+  },
+  "SakilaProject\\pom.xml": {
+    "summary": "This file is a Maven project file that defines dependencies and build settings for a Java application.",
+    "methods": [
+      {
+        "name": "dependencies",
+        "signature": "List<Dependency>",
+        "description": "A list of dependencies for the project."
+      },
+      {
+        "name": "dependencies",
+        "signature": "void",
+        "description": "Defines the dependencies for the project."
+      },
+      {
+        "name": "dependency",
+        "signature": "<groupId>:<artifactId>:<version>",
+        "description": "Defines a dependency for a specific groupId, artifactId, and version."
+      },
+      {
+        "name": "dependencies",
+        "signature": "List<Dependency>",
+        "description": "A list of dependencies for the project."
+      },
+      {
+        "name": "build",
+        "signature": "Build",
+        "description": "The build settings for the project."
+      }
+    ],
+    "complexity_notes": "The structure of the file is straightforward and easy to understand. The complexity of the file is low as it only contains basic configuration and dependency information. The file is relatively simple and straightforward, with a single method that defines the dependencies for the project. There are no complex structures or patterns present. The file is relatively simple and straightforward, with only one method defined. However, the number of dependencies defined in the file could potentially increase the complexity of the application. The structure of the file is straightforward and easy to understand. However, the complexity of the dependencies and build settings may vary depending on the specific requirements of the project. "
+  },
+  "SakilaProject\\.mvn\\wrapper\\maven-wrapper.properties": {
+    "summary": "This file contains the distribution URL and wrapper URL for the Maven build tool.",
+    "methods": [],
+    "complexity_notes": "This file is simple and straightforward. It only contains two URLs. "
+  },
+  "SakilaProject\\src\\main\\resources\\application.properties": {
+    "summary": "This is a configuration file for a Spring Boot application. It sets up the database connection and JPA settings.",
+    "methods": [
+      {
+        "name": "server.port",
+        "signature": "int",
+        "description": "Sets the server port to 8090."
+      },
+      {
+        "name": "spring.datasource.url",
+        "signature": "String",
+        "description": "Sets the database connection URL to jdbc:mysql://localhost:3306/sakila?serverTimezone=GMT."
+      },
+      {
+        "name": "spring.datasource.username",
+        "signature": "String",
+        "description": "Sets the database username to root."
+      },
+      {
+        "name": "spring.datasource.password",
+        "signature": "String",
+        "description": "Sets the database password to Lozinka123."
+      },
+      {
+        "name": "spring.jpa.hibernate.ddl-auto",
+        "signature": "String",
+        "description": "Sets the JPA DDL auto mode to update."
+      },
+      {
+        "name": "spring.jpa.show-sql",
+        "signature": "boolean",
+        "description": "Sets the JPA show SQL flag to true."
+      }
+    ],
+    "complexity_notes": "This configuration file is relatively simple and straightforward. It only contains a few properties that are used to set up the database connection and JPA settings. "
+  }
+}
