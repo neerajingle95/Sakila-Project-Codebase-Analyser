@@ -1,8 +1,8 @@
-# 🧠 SakilaProject Codebase Analyzer (LLM-Powered)
+# SakilaProject Codebase Analyzer (LLM-Powered)
 
 This project analyzes the [SakilaProject](https://github.com/janjakovacevic/SakilaProject) GitHub codebase using a Large Language Model (LLM) to extract structured knowledge from Java, SQL, XML, and configuration files. It produces a JSON summary describing the purpose, method signatures, and complexity of each component.
 
-## 🚀 Objectives
+## Objectives
 
 - Analyze a real-world multi-language codebase
 - Use an LLM to generate structured summaries
@@ -12,7 +12,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 📐 Approach & Architecture
+## Approach & Architecture
 
 ```
 [ Sakila Codebase ]
@@ -37,7 +37,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component     | Description                             |
 |---------------|-----------------------------------------|
@@ -50,7 +50,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## ✅ Best Practices Applied
+## Best Practices Applied
 
 - **Token-aware chunking** to prevent LLM overflow
 - **Structured prompting** to enforce consistent LLM output
@@ -60,7 +60,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 📁 Sample Output Format
+## Sample Output Format
 
 ```json
 {
@@ -80,7 +80,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## ⚠️ Assumptions & Limitations
+## Assumptions & Limitations
 
 - Assumes readable and reasonably commented source code
 - LLM output must be valid JSON for parsing (malformed ones are skipped)
@@ -89,7 +89,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 💻 How to Run
+## How to Run
 
 1. Clone this project and the SakilaProject codebase:
    ```bash
@@ -113,7 +113,7 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - Add support for `.py`, `.yaml`, `.json` files
 - Integrate `radon` for code complexity analysis
