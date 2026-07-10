@@ -123,8 +123,8 @@ This project analyzes the [SakilaProject](https://github.com/janjakovacevic/Saki
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Neeraj Ingle**  
 Senior Data Engineer | GenAI Practitioner  
-📫 Open to collaborations in LLMOps, Data QA, and RAG systems
+Open to collaborations in LLMOps, Data QA, and RAG systems
